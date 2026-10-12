@@ -1,0 +1,421 @@
+/* ===== RESET ===== */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #050505;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* ===== CUSTOM CURSOR ===== */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #00d4ff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transition: width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor.active {
+  width: 60px;
+  height: 60px;
+  background: rgba(0, 212, 255, 0.15);
+}
+
+/* ===== HEADER ===== */
+.site-header {
+  width: 90%;
+  max-width: 1400px;
+  min-height: 100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+}
+
+.logo-mark {
+  font-family: "Permanent Marker", cursive;
+  font-size: 28px;
+  color: #fff;
+}
+
+/* Navigation */
+.main-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.main-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+  color: #a8ff3e;
+}
+
+.main-nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 3px;
+  background: #a8ff3e;
+  border-radius: 5px;
+}
+
+/* Let's Talk Button */
+.talk-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  background: #8b5cf6;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.15);
+  transition: 0.3s ease;
+}
+
+.talk-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+  min-height: 80vh;
+}
+
+/* Left Side */
+.hero-left {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-left h1 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.name {
+  display: block;
+  font-family: "Permanent Marker", cursive;
+  font-size: clamp(40px, 5vw, 75px);
+  font-weight: 400;
+  line-height: 1.15;
+  color: #ffffff;
+}
+
+.role {
+  font-size: 35px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 15px 0;
+}
+
+.description {
+  max-width: 450px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+.skills {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.8;
+  color: #ffe14d;
+  margin-bottom: 30px;
+}
+
+/* Buttons */
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 25px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-primary {
+  background: #a8ff3e;
+  color: #0d0d10;
+}
+
+.btn-primary:hover {
+  transform: translateY(-4px);
+  background: #c0ff75;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #ffffff;
+  border: 2px solid #ffffff;
+}
+
+.btn-outline:hover {
+  background: #ffffff;
+  color: #0d0d10;
+}
+
+/* Right Side */
+.hero-right {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 0;
+}
+
+.hero-image {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+/* Speech Bubble */
+.bubble {
+  position: absolute;
+  top: 5%;
+  left: 0;
+  z-index: 3;
+  background: #3fd4ff;
+  color: #062226;
+  font-size: 14px;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+  padding: 18px 20px;
+  border: 2px solid #ffffff;
+  border-radius: 25px 25px 5px 25px;
+  transform: rotate(-4deg);
+}
+
+/* Ideas Text */
+.ideas {
+  position: absolute;
+  top: 35%;
+  right: 0;
+  z-index: 3;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.code-tag {
+  display: block;
+  margin-top: 10px;
+  color: #ff4fd8;
+  font-size: 25px;
+  font-weight: 700;
+}
+
+/* ===== RESPONSIVE (bade se chhota order mein) ===== */
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .main-nav {
+    gap: 15px;
+  }
+
+  .main-nav a {
+    font-size: 15px;
+  }
+
+  .talk-btn {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-nav {
+    display: none;
+  }
+
+  .hero {
+    gap: 20px;
+  }
+
+  .name {
+    font-size: 45px;
+  }
+
+  .role {
+    font-size: 26px;
+  }
+
+  .bubble {
+    font-size: 11px;
+    padding: 12px;
+  }
+
+  .ideas {
+    font-size: 14px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  .site-header {
+    min-height: 85px;
+  }
+
+  .logo-mark {
+    font-size: 24px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 30px 0;
+  }
+
+  .name {
+    font-size: clamp(36px, 10vw, 55px);
+    overflow-wrap: anywhere;
+  }
+
+  .role {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 15px;
+  }
+
+  .skills {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .hero-buttons {
+    gap: 10px;
+  }
+
+  .btn {
+    padding: 13px 18px;
+    font-size: 13px;
+  }
+
+  .hero-right {
+    margin-top: 20px;
+  }
+
+  .hero-image {
+    max-width: 450px;
+  }
+
+  .bubble {
+    top: 0;
+    font-size: 10px;
+    padding: 10px;
+  }
+
+  .ideas {
+    font-size: 12px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 400px) {
+  .site-header {
+    width: 92%;
+  }
+
+  .logo-mark {
+    font-size: 20px;
+  }
+
+  .talk-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+  }
+
+  .hero {
+    width: 92%;
+  }
+
+  .name {
+    font-size: 32px;
+  }
+
+  .role {
+    font-size: 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
+
+/* Touch devices par cursor hide */
+@media (hover: none) {
+  .cursor {
+    display: none;
+  }
+}

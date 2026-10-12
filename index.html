@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kuldeep Ahirwar</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <a class="logo" href="#home" aria-label="Kuldeep home">
+        <span class="logo-mark">Kuldeep</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a class="active" href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#work">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Contact Us</a>
+      </nav>
+
+      <a class="talk-btn" href="#contact">
+        <span>Let's Talk</span><span aria-hidden="true">→</span>
+      </a>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <!-- LEFT SIDE -->
+      <div class="hero-left">
+        <h1>
+          I'm
+          <span class="name">Kuldeep Ahirwar</span>
+        </h1>
+
+        <h2 class="role">Full stack developer</h2>
+
+        <p class="description">
+          I'm a passionate Full Stack & WordPress Developer who builds modern,
+          responsive, and user-friendly websites that help businesses grow
+          online.
+        </p>
+
+        <p class="skills">• HTML • CSS • JavaScript • React • Tailwind CSS</p>
+
+        <div class="hero-buttons">
+          <a href="#work" class="btn btn-primary">View My Work →</a>
+          <a href="#resume" class="btn btn-outline">Download Resume ↓</a>
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="hero-right">
+        <div class="bubble">
+          LET'S BUILD<br />
+          SOMETHING<br />
+          AWESOME!
+        </div>
+
+        <img src="home image.png" alt="Developer Image" class="hero-image" />
+
+        <div class="ideas">
+          Ideas<br />
+          To<br />
+          Reality
+          <span class="code-tag">&lt;/&gt;</span>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let x = mouseX;
+      let y = mouseY;
+
+      document.addEventListener("mousemove", (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      // smooth follow effect
+      function animate() {
+        x += (mouseX - x) * 0.15;
+        y += (mouseY - y) * 0.15;
+        cursor.style.transform = `translate(${x}px, ${y}px) translate(-50%, -50%)`;
+        requestAnimationFrame(animate);
+      }
+      animate();
+
+      // links aur buttons par hover effect
+      document.querySelectorAll("a, button").forEach((el) => {
+        el.addEventListener("mouseenter", () => cursor.classList.add("active"));
+        el.addEventListener("mouseleave", () =>
+          cursor.classList.remove("active"),
+        );
+      });
+    </script>
+  </body>
+</html>
